@@ -29,13 +29,20 @@ public class Solution {
 //        return ld.getDayOfWeek().getDisplayName( TextStyle.FULL, Locale.US ).toUpperCase();
 
         // Success with JDK 7 (JDK-6. Maybe...) without locale/timezone;
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
-        Calendar cal = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
+//        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+//        Calendar cal = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
 
         // TimeZone/Locale не отрабатывает почему-то.
 //        Calendar cal = new GregorianCalendar( TimeZone.getTimeZone("Europe/England"), Locale.US );
 //        cal.set(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
-        return sdf.format(cal.getTime()).toUpperCase();
+//        return sdf.format(cal.getTime()).toUpperCase();
+        // В одну строку:
+        return new SimpleDateFormat("EEEE").format(
+                new GregorianCalendar (
+                        Integer.parseInt(year),
+                        Integer.parseInt(month)-1,
+                        Integer.parseInt(day)).getTime()).toUpperCase();
+
 
     }
 
