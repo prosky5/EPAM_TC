@@ -209,6 +209,9 @@ public class Solutions21_31 {
 
 
     public static void main(String[] args) {
+        print();
+        print("Expectation : Reality");
+
         // DelDel:
         print();
         print("DelDel:");

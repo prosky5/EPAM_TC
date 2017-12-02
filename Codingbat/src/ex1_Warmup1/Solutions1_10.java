@@ -153,6 +153,9 @@ public class Solutions1_10 {
 
 
     public static void main(String[] args) {
+        print();
+        print("Expectation : Reality");
+
         // SleepIn:
         print();
         print(" SleepIn:");
