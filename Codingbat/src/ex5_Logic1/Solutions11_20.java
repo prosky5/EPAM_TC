@@ -1,9 +1,8 @@
 package ex5_Logic1;
 
-import java.util.*;
-
 import static utils.Print.*;
 
+@SuppressWarnings("WeakerAccess")
 public class Solutions11_20 {
 
     /*
@@ -86,9 +85,90 @@ public class Solutions11_20 {
     teaParty(3, 8) → 0
     teaParty(20, 6) → 2
      */
-//    static int teaParty(int tea, int candy) {
-//        return 0;
-//    }
+    static int teaParty(int tea, int candy) {
+        if (tea < 5 || candy < 5) {
+            return 0;
+        } else if (tea/candy >= 2 || candy/tea >= 2) {
+                return 2;
+        } else {
+            return 1;
+        }
+    }
+
+    /*
+    Given a string str, if the string starts with "f" return "Fizz".
+    If the string ends with "b" return "Buzz".
+    If both the "f" and "b" conditions are true, return "FizzBuzz".
+    In all other cases, return the string unchanged.
+
+    fizzString("fig") → "Fizz"
+    fizzString("dib") → "Buzz"
+    fizzString("fib") → "FizzBuzz"
+     */
+    static String fizzString(String str) {
+        String str2 = "";
+        if (str.length() > 0) {
+            if (str.charAt(0) == 'f') {
+                str2 += "Fizz";
+            }
+            if (str.charAt(str.length() - 1) == 'b') {
+                str2 += "Buzz";
+            }
+        }
+        return str2.length() == 0 ? str : str2;
+    }
+
+    /*
+    Given an int n, return the string form of the number followed by "!".
+    So the int 6 yields "6!".
+    Except if the number is divisible by 3 use "Fizz" instead of the number,
+    and if the number is divisible by 5 use "Buzz",
+    and if divisible by both 3 and 5, use "FizzBuzz".
+    Note: the % "mod" operator computes the remainder after division,
+    so 23 % 10 yields 3.
+    What will the remainder be when one number divides evenly into another?
+
+    fizzString2(1) → "1!"
+    fizzString2(2) → "2!"
+    fizzString2(3) → "Fizz!"
+     */
+    static String fizzString2(int n) {
+        boolean f = (n % 3 == 0);
+        boolean b = (n % 5 == 0);
+
+        if (f && b) return "FizzBuzz!";
+        if (f) return "Fizz!";
+        if (b) return "Buzz!";
+        return n + "!";
+    }
+
+    /*
+    Given three ints, a b c,
+    return true if it is possible to add two of the ints to get the third.
+
+    twoAsOne(1, 2, 3) → true
+    twoAsOne(3, 1, 2) → true
+    twoAsOne(3, 2, 2) → false
+     */
+    static boolean twoAsOne(int a, int b, int c) {
+        return a - b == c || a - c == b
+                || c - a == b || c - b == a
+                || b - a == c || b - c == a;
+    }
+
+    /*
+    Given three ints, a b c,
+    return true if b is greater than a, and c is greater than b.
+    However, with the exception that if "bOk" is true, b does not need to be greater than a.
+
+    inOrder(1, 2, 4, false) → true
+    inOrder(1, 2, 1, false) → false
+    inOrder(1, 1, 2, true) → true
+     */
+    static boolean inOrder(int a, int b, int c, boolean bOk) {
+        return bOk ? (c > b) : (c > b) && (b > a);
+    }
+
 
 
     public static void main(String[] args) {
@@ -130,21 +210,39 @@ public class Solutions11_20 {
         print("True : " + answerCell(true, true , false));
 
         // TeaParty:
-//        print();
-//        print(" TeaParty:");
-//        print("1 : " + teaParty(6, 8));
-//        print("0 : " + teaParty(3, 8));
-//        print("2 : " + teaParty(20, 6));
-
-        //
         print();
-        print(" TEST:");
+        print(" TeaParty:");
+        print("1 : " + teaParty(6, 8));
+        print("0 : " + teaParty(3, 8));
+        print("2 : " + teaParty(20, 6));
 
+        // FizzString:
+        print();
+        print(" FizzString:");
+        print("Fizz : " + fizzString("fig"));
+        print("Buzz : " + fizzString("dib"));
+        print("FizzBuzz : " + fizzString("fib"));
 
+        // FizzString2:
+        print();
+        print(" FizzString2:");
+        print("1! : " + fizzString2(1));
+        print("2! : " + fizzString2(2));
+        print("Fizz! : " + fizzString2(3));
 
+        // TwoAsOne:
+        print();
+        print(" TwoAsOne:");
+        print("True : " + twoAsOne(1, 2, 3));
+        print("True : " + twoAsOne(3, 1, 2));
+        print("False : " + twoAsOne(3, 2, 2));
 
-
-
+        // InOrder:
+        print();
+        print(" InOrder:");
+        print("True : " + inOrder(1, 2, 4, false));
+        print("False : " + inOrder(1, 2, 1, false));
+        print("True : " + inOrder(1, 1, 2, true));
 
     }
 }

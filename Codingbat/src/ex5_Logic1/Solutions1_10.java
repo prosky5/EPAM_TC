@@ -2,6 +2,7 @@ package ex5_Logic1;
 
 import static utils.Print.*;
 
+@SuppressWarnings("WeakerAccess")
 public class Solutions1_10 {
 
     /*
