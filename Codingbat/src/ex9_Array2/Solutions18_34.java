@@ -1,5 +1,7 @@
 package ex9_Array2;
 
+import java.util.Arrays;
+
 import static utils.Print.*;
 
 public class Solutions18_34 {
@@ -480,117 +482,85 @@ public class Solutions18_34 {
 
         // fizzArray3:
         print();
-        StringBuilder first = new StringBuilder();
-        StringBuilder second = new StringBuilder();
-        StringBuilder third = new StringBuilder();
-        StringBuilder[] out = new StringBuilder[]{first, second, third};
-        int[][] fizzArrays = new int[][]{fizzArray3(5, 10), fizzArray3(11, 18), fizzArray3(1 ,3)};
-        for (int i = 0; i < fizzArrays.length; i++) {
-            out[i].append("[");
-            for (int num : fizzArrays[i]) {
-                out[i].append(num).append(", ");
-            }
-            out[i].append("]");
-        }
         print(" fizzArray3: \n" +
-                "[5, 6, 7, 8, 9] : " + first.toString() + "\n" +
-                "[11, 12, 13, 14, 15, 16, 17] : " + second.toString() + "\n" +
-                "[1, 2] : " + third.toString() + "\n");
+                "[5, 6, 7, 8, 9] : " + Arrays.toString(fizzArray3(5, 10)) + "\n" +
+                "[11, 12, 13, 14, 15, 16, 17] : " + Arrays.toString(fizzArray3(11, 18)) + "\n" +
+                "[1, 2] : " + Arrays.toString(fizzArray3(1 ,3)) + "\n");
 
         // shiftLeft:
         print();
         print(" shiftLeft: \n" +
-                "[2, 5, 3, 6] : " + arrayPrint(shiftLeft(new int[]{6, 2, 5, 3})) + "\n" +
-                "[2, 1] : " + arrayPrint(shiftLeft(new int[]{1, 2})) + "\n" +
-                "[1] : " + arrayPrint(shiftLeft(new int[]{1})) + "\n");
+                "[2, 5, 3, 6] : " + Arrays.toString(shiftLeft(new int[]{6, 2, 5, 3})) + "\n" +
+                "[2, 1] : " + Arrays.toString(shiftLeft(new int[]{1, 2})) + "\n" +
+                "[1] : " + Arrays.toString(shiftLeft(new int[]{1})) + "\n");
 
         // tenRun:
         print();
         print(" tenRun: \n" +
-                "2, 10, 10, 10, 20, 20 : " + arrayPrint(tenRun(new int[]{2, 10, 3, 4, 20, 5})) + "\n" +
-                "10, 10, 20, 20 : " + arrayPrint(tenRun(new int[]{10, 1, 20, 2})) + "\n" +
-                "10, 10, 10, 20 : " + arrayPrint(tenRun(new int[]{10, 1, 9, 20})) + "\n");
+                "2, 10, 10, 10, 20, 20 : " + Arrays.toString(tenRun(new int[]{2, 10, 3, 4, 20, 5})) + "\n" +
+                "10, 10, 20, 20 : " + Arrays.toString(tenRun(new int[]{10, 1, 20, 2})) + "\n" +
+                "10, 10, 10, 20 : " + Arrays.toString(tenRun(new int[]{10, 1, 9, 20})) + "\n");
 
         // pre4:
         print();
         print(" pre4: \n" +
-                "[1, 2] : " + arrayPrint(pre4(new int[]{1, 2, 4, 1})) + "\n" +
-                "[3, 1] : " + arrayPrint(pre4(new int[]{3, 1, 4})) + "\n" +
-                "[1] : " + arrayPrint(pre4(new int[]{1, 4, 4})) + "\n");
+                "[1, 2] : " + Arrays.toString(pre4(new int[]{1, 2, 4, 1})) + "\n" +
+                "[3, 1] : " + Arrays.toString(pre4(new int[]{3, 1, 4})) + "\n" +
+                "[1] : " + Arrays.toString(pre4(new int[]{1, 4, 4})) + "\n");
 
         // post4:
         print();
         print(" post4: \n" +
-                "[1, 2] : " + arrayPrint(post4(new int[]{2, 4, 1, 2})) + "\n" +
-                "[2] : " + arrayPrint(post4(new int[]{4, 1, 4, 2})) + "\n" +
-                "[1, 2, 3] : " + arrayPrint(post4(new int[]{4, 4, 1, 2, 3})) + "\n");
+                "[1, 2] : " + Arrays.toString(post4(new int[]{2, 4, 1, 2})) + "\n" +
+                "[2] : " + Arrays.toString(post4(new int[]{4, 1, 4, 2})) + "\n" +
+                "[1, 2, 3] : " + Arrays.toString(post4(new int[]{4, 4, 1, 2, 3})) + "\n");
 
         // notAlone:
         print();
         print(" notAlone: \n" +
-                "[1, 3, 3] : " + arrayPrint(notAlone(new int[]{1, 2, 3}, 2)) + "\n" +
-                "[1, 3, 3, 5, 5, 2] : " + arrayPrint(notAlone(new int[]{1, 2, 3, 2, 5, 2}, 2)) + "\n" +
-                "[3, 4] : " + arrayPrint(notAlone(new int[]{3, 4}, 3)) + "\n" +
-                "[1, 1, 1, 2] : " + arrayPrint(notAlone(new int[]{1, 1, 1, 2}, 1)));
+                "[1, 3, 3] : " + Arrays.toString(notAlone(new int[]{1, 2, 3}, 2)) + "\n" +
+                "[1, 3, 3, 5, 5, 2] : " + Arrays.toString(notAlone(new int[]{1, 2, 3, 2, 5, 2}, 2)) + "\n" +
+                "[3, 4] : " + Arrays.toString(notAlone(new int[]{3, 4}, 3)) + "\n" +
+                "[1, 1, 1, 2] : " + Arrays.toString(notAlone(new int[]{1, 1, 1, 2}, 1)));
 
         // zeroFront:
         print();
         print(" zeroFront: \n" +
-                "[0, 0, 1, 1] : " + arrayPrint(zeroFront(new int[]{1, 0, 0, 1})) + "\n" +
-                "[0, 0, 1, 1, 1] : " + arrayPrint(zeroFront(new int[]{0, 1, 1, 0, 1})) + "\n" +
-                "[0, 1] : " + arrayPrint(zeroFront(new int[]{1, 0})) + "\n" +
-                "[0, 0, 0, -1, -1] : " + arrayPrint(zeroFront(new int[]{-1, 0, 0, -1, 0})));
+                "[0, 0, 1, 1] : " + Arrays.toString(zeroFront(new int[]{1, 0, 0, 1})) + "\n" +
+                "[0, 0, 1, 1, 1] : " + Arrays.toString(zeroFront(new int[]{0, 1, 1, 0, 1})) + "\n" +
+                "[0, 1] : " + Arrays.toString(zeroFront(new int[]{1, 0})) + "\n" +
+                "[0, 0, 0, -1, -1] : " + Arrays.toString(zeroFront(new int[]{-1, 0, 0, -1, 0})));
 
         // withoutTen:
         print();
         print(" withoutTen: \n" +
-                "[1, 2, 0, 0] : " + arrayPrint(withoutTen(new int[]{1, 10, 10, 2})) + "\n" +
-                "[2, 0, 0] : " + arrayPrint(withoutTen(new int[]{10, 2, 10})) + "\n" +
-                "[1, 99, 0] : " + arrayPrint(withoutTen(new int[]{1, 99, 10})) + "\n");
+                "[1, 2, 0, 0] : " + Arrays.toString(withoutTen(new int[]{1, 10, 10, 2})) + "\n" +
+                "[2, 0, 0] : " + Arrays.toString(withoutTen(new int[]{10, 2, 10})) + "\n" +
+                "[1, 99, 0] : " + Arrays.toString(withoutTen(new int[]{1, 99, 10})) + "\n");
 
         // zeroMax:
         print();
         print(" zeroMax: \n" +
-                "[5, 5, 3, 3] : " + arrayPrint(zeroMax(new int[]{0, 5, 0, 3})) + "\n" +
-                "[3, 4, 3, 3] : " + arrayPrint(zeroMax(new int[]{0, 4, 0, 3})) + "\n" +
-                "[1, 1, 0] : " + arrayPrint(zeroMax(new int[]{0, 1, 0})) + "\n" +
-                "[7, 3, 4, 3, 1, 1] : " + arrayPrint(zeroMax(new int[]{7, 0, 4, 3, 0, 1})) + "\n" +
-                "[5, 1, 5] : " + arrayPrint(zeroMax(new int[]{0, 1, 5})) + "\n");
+                "[5, 5, 3, 3] : " + Arrays.toString(zeroMax(new int[]{0, 5, 0, 3})) + "\n" +
+                "[3, 4, 3, 3] : " + Arrays.toString(zeroMax(new int[]{0, 4, 0, 3})) + "\n" +
+                "[1, 1, 0] : " + Arrays.toString(zeroMax(new int[]{0, 1, 0})) + "\n" +
+                "[7, 3, 4, 3, 1, 1] : " + Arrays.toString(zeroMax(new int[]{7, 0, 4, 3, 0, 1})) + "\n" +
+                "[5, 1, 5] : " + Arrays.toString(zeroMax(new int[]{0, 1, 5})) + "\n");
 
         // evenOdd:
         print();
         print(" evenOdd: \n" +
-                "[0, 0, 0, 1, 1, 1, 1] : " + arrayPrint(evenOdd(new int[]{1, 0, 1, 0, 0, 1, 1})) + "\n" +
-                "[2, 3, 3] : " + arrayPrint(evenOdd(new int[]{3, 3, 2})) + "\n" +
-                "[2, 2, 2] : " + arrayPrint(evenOdd(new int[]{2, 2, 2})) + "\n");
+                "[0, 0, 0, 1, 1, 1, 1] : " + Arrays.toString(evenOdd(new int[]{1, 0, 1, 0, 0, 1, 1})) + "\n" +
+                "[2, 3, 3] : " + Arrays.toString(evenOdd(new int[]{3, 3, 2})) + "\n" +
+                "[2, 2, 2] : " + Arrays.toString(evenOdd(new int[]{2, 2, 2})) + "\n");
 
         // fizzBuzz:
         print();
         print(" fizzBuzz: \n" +
-                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\"] : " + stringArrPrint(fizzBuzz(1, 6)) + "\n" +
-                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\"] : " + stringArrPrint(fizzBuzz(1, 8)) + "\n" +
-                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\", \"8\", \"Fizz\", \"Buzz\"] : " + stringArrPrint(fizzBuzz(1, 11)) + "\n");
+                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\"] : " + arrPrint(fizzBuzz(1, 6)) + "\n" +
+                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\"] : " + arrPrint(fizzBuzz(1, 8)) + "\n" +
+                "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\", \"8\", \"Fizz\", \"Buzz\"] : " + arrPrint(fizzBuzz(1, 11)) + "\n");
 
-    }
-
-    static String arrayPrint(int[] array) {
-        StringBuilder out = new StringBuilder();
-        out.append("[");
-        for (Object str : array) {
-            out.append(str).append(", ");
-        }
-        out.append("]");
-        return out.toString();
-    }
-
-    static String stringArrPrint(String[] array) {
-        StringBuilder out = new StringBuilder();
-        out.append("[");
-        for (Object str : array) {
-            out.append("\"").append(str).append("\"").append(", ");
-        }
-        out.append("]");
-        return out.toString();
     }
 
 }

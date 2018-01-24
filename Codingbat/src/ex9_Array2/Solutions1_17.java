@@ -1,5 +1,7 @@
 package ex9_Array2;
 
+import java.util.Arrays;
+
 import static utils.Print.*;
 
 public class Solutions1_17 {
@@ -429,22 +431,10 @@ public class Solutions1_17 {
 
         // fizzArray:
         print();
-        StringBuilder first = new StringBuilder();
-        StringBuilder second = new StringBuilder();
-        StringBuilder third = new StringBuilder();
-        StringBuilder[] out = new StringBuilder[]{first, second, third};
-        int[][] fizzArrays = new int[][]{fizzArray(4), fizzArray(1), fizzArray(10)};
-        for (int i = 0; i < fizzArrays.length; i++) {
-            out[i].append("[");
-            for (int num : fizzArrays[i]) {
-                out[i].append(num).append(", ");
-            }
-            out[i].append("]");
-        }
         print(" fizzArray: \n" +
-                "[0, 1, 2, 3] : " + first.toString() + "\n" +
-                "[0] : " + second.toString() + "\n" +
-                "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] : " + third.toString() + "\n");
+                "[0, 1, 2, 3] : " + Arrays.toString(fizzArray(4)) + "\n" +
+                "[0] : " + Arrays.toString(fizzArray(1)) + "\n" +
+                "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] : " + Arrays.toString(fizzArray(10)) + "\n");
 
         // only14:
         print();
@@ -455,21 +445,10 @@ public class Solutions1_17 {
 
         // fizzArray2:
         print();
-        first.delete(0, first.length());
-        second.delete(0, second.length());
-        third.delete(0, third.length());
-        String[][] fizzArrays2 = new String[][]{fizzArray2(4), fizzArray2(10), fizzArray2(2)};
-        for (int i = 0; i < fizzArrays2.length; i++) {
-            out[i].append("[");
-            for (String str : fizzArrays2[i]) {
-                out[i].append("\"").append(str).append("\"").append(" ");
-            }
-            out[i].append("]");
-        }
         print(" fizzArray2: \n" +
-                "[\"0\", \"1\", \"2\", \"3\"] : " + first.toString() + "\n" +
-                "[\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"] : " + second.toString() + "\n" +
-                "[\"0\", \"1\"] : " + third.toString() + "\n");
+                "[\"0\", \"1\", \"2\", \"3\"] : " + arrPrint(fizzArray2(4)) + "\n" +
+                "[\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"] : " + arrPrint(fizzArray2(10)) + "\n" +
+                "[\"0\", \"1\"] : " + arrPrint(fizzArray2(2)) + "\n");
 
         // no14:
         print();
