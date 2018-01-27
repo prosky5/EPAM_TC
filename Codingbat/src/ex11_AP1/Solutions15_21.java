@@ -2,6 +2,7 @@ package ex11_AP1;
 
 import static utils.Print.*;
 
+@SuppressWarnings("WeakerAccess")
 public class Solutions15_21 {
 
     /*

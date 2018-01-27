@@ -5,6 +5,7 @@ import java.util.List;
 
 import static utils.Print.*;
 
+@SuppressWarnings("WeakerAccess")
 public class Solutions1_7 {
 
     /*
