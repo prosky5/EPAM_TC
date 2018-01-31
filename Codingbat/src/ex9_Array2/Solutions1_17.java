@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import static utils.Print.*;
 
+@SuppressWarnings("WeakerAccess")
 public class Solutions1_17 {
 
     /*
